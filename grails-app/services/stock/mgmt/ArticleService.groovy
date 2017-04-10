@@ -10,7 +10,7 @@ class ArticleService {
     }
 
     def save(Article article) {
-        article.save(failOnError: true)
+        article.save()
     }
 
 }
