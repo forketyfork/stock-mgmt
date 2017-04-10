@@ -5,6 +5,7 @@ class BootStrap {
     def springSecurityService
 
     def init = { servletContext ->
+        // initial data for the database
         [
                 new Article(externalId: "A304", name: "Aqva Divina", brand: "Bvlgari", price: 250, volume: 100, amount: 5),
                 new Article(externalId: "C802", name: "18 La Lune", brand: "Dolce & Gabbana", price: 120, volume: 50, amount: 8),

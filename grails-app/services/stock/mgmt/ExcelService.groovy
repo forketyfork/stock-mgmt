@@ -7,11 +7,19 @@ import org.apache.poi.ss.usermodel.WorkbookFactory
 import org.apache.poi.xssf.streaming.SXSSFWorkbook
 import org.springframework.context.MessageSource
 
+/**
+ * Service dealing with export/import tasks.
+ */
 @Transactional
 class ExcelService {
 
     MessageSource messageSource
 
+    /**
+     * Loads data from XLS file to database.
+     *
+     * @param stream InputStream for the uploaded file
+     */
     def load(InputStream stream) {
         WorkbookFactory.create(stream).withCloseable { wb ->
             Sheet sheet = wb.getSheetAt(0)
@@ -25,6 +33,13 @@ class ExcelService {
         }
     }
 
+    /**
+     * Exports data from the list to an excel sheet.
+     *
+     * @param articles list of articles
+     * @param locale — for filling the i18n-ed header values
+     * @param stream output stream to write the result to
+     */
     def export(List<Article> articles, Locale locale, OutputStream stream) {
         new SXSSFWorkbook().withCloseable { wb ->
             Sheet sheet = wb.createSheet()
