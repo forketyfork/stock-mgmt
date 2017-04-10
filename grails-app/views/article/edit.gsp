@@ -64,7 +64,7 @@
             <g:hiddenField id="id" name="id" value="${article?.id}"/>
             <div class="btn-toolbar">
                 <g:link class="btn btn-warning link-button pull-right" action="list"><g:message code="article.add.button.cancel" /></g:link>
-                <g:actionSubmit value="${message(code: 'article.add.button.save')}" class="btn btn-success pull-right"/>
+                <g:actionSubmit name="save" action="save" value="${message(code: 'article.add.button.save')}" class="btn btn-success pull-right" />
             </div>
 
         </g:form>

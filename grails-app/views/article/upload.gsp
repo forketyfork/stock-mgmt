@@ -24,7 +24,7 @@
             </div>
             <div class="btn-toolbar">
                 <g:link class="btn btn-warning link-button pull-right" action="list"><g:message code="article.upload.button.cancel" /></g:link>
-                <g:actionSubmit value="${message(code: 'article.upload.button')}" class="btn btn-success pull-right"/>
+                <g:actionSubmit action="upload" value="${message(code: 'article.upload.button')}" class="btn btn-success pull-right"/>
             </div>
         </g:uploadForm>
     </div>
