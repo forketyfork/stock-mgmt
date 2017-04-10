@@ -32,11 +32,14 @@
             <ul class="nav navbar-nav navbar-right">
                 <g:pageProperty name="page.nav"/>
                 <sec:ifLoggedIn>
-                    <li><g:link controller="article" action="list"><g:message code="article.list.title" /></g:link></li>
-                    <li><g:link controller="article" action="shortage"><g:message code="article.shortage.title" /></g:link></li>
-                    <li><g:link controller="article" action="upload"><g:message code="article.upload.title" /></g:link></li>
+                    <li><g:link controller="article" action="list"><g:message code="article.list.title"/></g:link></li>
+                    <li><g:link controller="article" action="shortage"><g:message
+                            code="article.shortage.title"/></g:link></li>
+                    <sec:ifAllGranted roles="ROLE_ADMIN"><li><g:link controller="article" action="upload"><g:message
+                            code="article.upload.title"/></g:link></li>
+                    </sec:ifAllGranted>
                     <li><p class="navbar-text"><g:message
-                        code="security.username.comment"/>&nbsp;<sec:username/></p></li>
+                            code="security.username.comment"/>&nbsp;<sec:username/></p></li>
                 </sec:ifLoggedIn>
                 <li>
                     <sec:ifNotLoggedIn><a href="/login/auth"><g:message code="security.login"/></a></sec:ifNotLoggedIn>
