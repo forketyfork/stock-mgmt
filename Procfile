@@ -1,0 +1,1 @@
+web: cd build/libs ; java -Dserver.port=$PORT $JAVA_OPTS -jar stock-mgmt-0.0.1-SNAPSHOT.jar
