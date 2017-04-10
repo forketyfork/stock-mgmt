@@ -18,7 +18,8 @@
                         code="article.form.field.externalId"/></label>
 
                 <div class="col-sm-4">
-                    <g:textField id="externalId" name="externalId" value="${article?.externalId}" required="true" class="form-control"/>
+                    <g:textField id="externalId" name="externalId" value="${article?.externalId}" required="true"
+                                 class="form-control"/>
                 </div>
             </div>
 
@@ -58,13 +59,16 @@
                 <label for="amount" class="col-sm-2 control-label"><g:message code="article.form.field.amount"/></label>
 
                 <div class="col-sm-4">
-                    <g:field type="number" id="amount" name="amount" value="${article?.amount ?: 0}" required="true" class="form-control"/>
+                    <g:field type="number" id="amount" name="amount" value="${article?.amount ?: 0}" required="true"
+                             class="form-control"/>
                 </div>
             </div>
             <g:hiddenField id="id" name="id" value="${article?.id}"/>
             <div class="col-sm-6">
-                <g:link class="btn btn-warning link-button pull-right button-right" action="list"><g:message code="article.add.button.cancel" /></g:link>
-                <g:actionSubmit name="save" action="save" value="${message(code: 'article.add.button.save')}" class="btn btn-success pull-right" />
+                <g:link class="btn btn-warning link-button pull-right button-right" action="list"><g:message
+                        code="article.add.button.cancel"/></g:link>
+                <g:actionSubmit name="save" action="save" value="${message(code: 'article.add.button.save')}"
+                                class="btn btn-success pull-right"/>
             </div>
         </g:form>
     </div>
