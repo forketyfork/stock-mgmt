@@ -37,7 +37,7 @@
                 <g:textField id="brand" name="brand" value="${brand}" class="form-control"/>
             </div>
             <g:actionSubmit action="search" value="${message(code: 'article.list.button.search')}" class="btn btn-success"/>
-            <g:link class="btn btn-warning link-button" action="list" ><g:message code="article.list.button.clear"/></g:link>
+            <g:link class="btn btn-warning link-button button-right" action="list" ><g:message code="article.list.button.clear"/></g:link>
         </g:form>
     </div>
     <table class="article-list">

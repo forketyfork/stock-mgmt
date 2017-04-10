@@ -43,11 +43,9 @@ class ArticleController {
     }
 
     def search() {
-        render(view: 'list', model: [
+        render(view: 'list', model: params + [
                 articles    : Article.findAllByNameIlikeAndBrandIlike("${params.name}%", "${params.brand}%", params),
-                articleCount: Article.countByNameIlikeAndBrandIlike("${params.name}%", "${params.brand}%"),
-                brand       : params.brand,
-                name        : params.name
+                articleCount: Article.countByNameIlikeAndBrandIlike("${params.name}%", "${params.brand}%")
         ])
     }
 

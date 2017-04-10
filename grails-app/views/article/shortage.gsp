@@ -23,7 +23,7 @@
             <tr>
                 <td>${article.name}</td>
                 <td>${article.brand}</td>
-                <td><g:formatNumber number="${article.price}" type="currency"/></td>
+                <td><g:formatNumber number="${article.price}" type="currency" currencyCode="USD"/></td>
                 <td>${article.volume}</td>
                 <td>${article.amount}</td>
             </tr>
