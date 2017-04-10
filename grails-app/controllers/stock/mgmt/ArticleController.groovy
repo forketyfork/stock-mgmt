@@ -43,6 +43,9 @@ class ArticleController {
     }
 
     def search() {
+        if (params.name.isEmpty() && params.brand.isEmpty()) {
+            redirect(action: 'list')
+        }
         render(view: 'list', model: params + [
                 articles    : Article.findAllByNameIlikeAndBrandIlike("${params.name}%", "${params.brand}%", params),
                 articleCount: Article.countByNameIlikeAndBrandIlike("${params.name}%", "${params.brand}%")
